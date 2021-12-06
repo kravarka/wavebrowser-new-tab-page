@@ -25,7 +25,7 @@ export default function MainPage() {
   }, [blur])
 
   return (
-    <div className="mainPage enableBlur">
+    <div className="mainPage">
       <Header />
       {/* <div style={{ height: '100%' }}> */}
 
