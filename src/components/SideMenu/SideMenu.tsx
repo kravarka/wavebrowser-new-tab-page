@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { MouseEvent, MouseEventHandler } from 'react'
 import Icon from '../Icon/Icon'
 import { getClassName, Styleable } from '../utils/utils'
 import './style.css'
@@ -6,9 +6,16 @@ import './style.css'
 export interface SideMenuProps extends Styleable {
 }
 export default function SideMenu(props: SideMenuProps) {
+
+  function handleClick(e: MouseEvent<HTMLDivElement>) {
+    const items = document.querySelectorAll('.sideMenu-item');
+    items.forEach(item => item.classList.remove('sideMenu-item-selected'));
+    e.currentTarget.classList.toggle('sideMenu-item-selected');
+  }
+
   function renderSideMenuItem(name: string, icon: string) {
     return (
-      <div className="sideMenu-item">
+      <div className="sideMenu-item" onClick={handleClick}>
         <Icon src={icon}/>
         <span className="sideMenu-item-name">{name}</span>
       </div>
