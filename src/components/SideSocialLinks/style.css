@@ -1,0 +1,15 @@
+.sideSocialLinks {
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  align-items: flex-end;
+}
+
+.sideSocialLinks > * {
+  margin-top: 30px;
+}
+
+.sideSocialLinks > img {
+  width: 26px;
+  height: 26px;
+}
