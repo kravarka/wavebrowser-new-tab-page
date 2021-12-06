@@ -1,0 +1,30 @@
+.mainBody {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mainBody-arrow-down {
+  
+}
+
+.mainBody-arrow-down-container {
+  position: absolute;
+  bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.mainBody-arrow-down-container > * {
+  margin-top: 16px;
+}
+
+.mainBody-arrow-down:hover {
+  filter: invert(6%) sepia(0%) saturate(95%) hue-rotate(223deg) brightness(100%) contrast(80%);
+}
