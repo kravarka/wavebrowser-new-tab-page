@@ -1,0 +1,47 @@
+.sideMenu {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  user-select: none;
+}
+
+.sideMenu-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1.5px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 5px;
+  width: min-content;
+  height: 40px;
+  max-width: 40px;
+  transition: max-width 0.5s ease;
+  overflow: hidden;
+}
+
+.sideMenu > .sideMenu-item {
+  margin-top: 39px;
+}
+
+.sideMenu-item > * {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.sideMenu-item-name {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.sideMenu-item:hover {
+  max-width: 200px;
+}
+
+.sideMenu-item > .icon {
+  width: 16px;
+  height: 16px;
+  aspect-ratio: 1;
+}

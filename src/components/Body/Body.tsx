@@ -1,25 +1,18 @@
 import React from 'react'
 import Icon from '../Icon/Icon'
+import ScrollFor from '../ScrollFor/ScrollFor';
+import SideMenu from '../SideMenu/SideMenu';
 import './style.css'
 
 export default function Body() {
-  function renderArrowDownContainer() {
-    return (
-      <div className="mainBody-arrow-down-container">
-        <div>Scroll for Lolita News</div>
-        <Icon src={require('../../assets/icons/Arrow down.svg').default} className="mainBody-arrow-down" href="#"/>
-      </div>
-    );
-  }
   return (
     <div className="mainBody">
       <div className="mainBody-container">
-        <div>asd</div>
-        <div style={{ alignSelf: 'flex-end' }}>asd</div>
+        <SideMenu />
+        <ScrollFor className="mainBody-arrow-down-container" title="Scroll for Lolita News" href="#"/>
         <div>asd</div>
 
       </div>
-      {renderArrowDownContainer()}
     </div>
   )
 }

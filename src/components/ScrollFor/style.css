@@ -1,0 +1,15 @@
+.scrollFor-arrow-down-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.scrollFor-arrow-down-container > * {
+  margin-top: 16px;
+}
+
+.scrollFor-arrow-down:hover {
+  filter: invert(6%) sepia(0%) saturate(95%) hue-rotate(223deg) brightness(100%) contrast(80%);
+}
