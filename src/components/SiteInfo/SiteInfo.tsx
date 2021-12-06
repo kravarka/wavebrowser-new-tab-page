@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react'
+import React from 'react'
 import SiteInfoRow from '../SiteInfoRow/SiteInfoRow'
 import { getClassName, Styleable } from '../utils/utils'
 import './style.css'

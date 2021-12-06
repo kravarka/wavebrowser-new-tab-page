@@ -11,7 +11,7 @@ export interface SiteInfoRowProps extends Styleable {
 }
 export default function SiteInfoRow(props: SiteInfoRowProps) {
   function renderValue() {
-    return <span className="siteInfoRow-value" style={{ fontSize: props.valueSize }}>{props.value}</span>
+    return <span key={props.value + '-value'} className="siteInfoRow-value" style={{ fontSize: props.valueSize }}>{props.value}</span>
   }
   function renderText() {
     return props.text
@@ -28,7 +28,7 @@ export default function SiteInfoRow(props: SiteInfoRowProps) {
     ...props.style,
   }
   return (
-    <p className={getClassName('siteInfoRow-text', props)} style={customStyle}>
+    <p key={props.value + '-text'} className={getClassName('siteInfoRow-text', props)} style={customStyle}>
       {renderBody()}
     </p>
   )

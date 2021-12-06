@@ -7,6 +7,6 @@ export interface IconProps extends Styleable{
 }
 export default function Icon(props: IconProps) {
   return (
-    <img className={getClassName('icon', props)} src={props.src} />
+    <img className={getClassName('icon', props)} alt="icon" src={props.src} />
   )
 }

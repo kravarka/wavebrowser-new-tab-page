@@ -9,6 +9,9 @@
   justify-content: space-between;
   flex-direction: row;
   padding-top: 46px;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
 }
 
 .header > * {
@@ -24,10 +27,4 @@
   /* flex-direction: column; */
   justify-content: flex-end;
   align-items: flex-start;
-}
-
-.searchBar {
-  position: sticky;
-  top: 125px;
-  margin-top: 36px;
 }
