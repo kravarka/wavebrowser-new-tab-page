@@ -1,7 +1,6 @@
-import React, { MouseEvent, MouseEventHandler } from 'react'
-import Icon from '../Icon/Icon'
+import React from 'react'
 import ScrollFor from '../ScrollFor/ScrollFor'
-import { getClassName, Styleable } from '../utils/utils'
+import { Styleable } from '../utils/utils'
 import './style.css'
 
 export interface NewsProps extends Styleable {

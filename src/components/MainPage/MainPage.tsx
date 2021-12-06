@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Body from '../Body/Body';
 import Header from '../Header/Header'
 import News from '../News/News';
-import ScrollFor from '../ScrollFor/ScrollFor';
 import { map } from '../utils/utils';
 import './style.css'
 
