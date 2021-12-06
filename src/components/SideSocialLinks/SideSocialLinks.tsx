@@ -13,7 +13,7 @@ export default function SideSocialLinks(props: SideSocialLinksProps) {
   }
   return (
     <div className={getClassName("sideSocialLinks", props)} style={props.style}>
-      {renderSideMenuItem(require('../../assets/icons/facebook logo.png').default)}
+      {renderSideMenuItem(require('../../assets/icons/facebook.png').default)}
       {renderSideMenuItem(require('../../assets/icons/youtube logo.svg').default)}
       {renderSideMenuItem(require('../../assets/icons/instagram logo.svg').default)}
       {renderSideMenuItem(require('../../assets/icons/linkedin logo.png').default)}
