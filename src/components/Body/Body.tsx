@@ -8,8 +8,8 @@ export default function Body() {
   return (
     <div className="mainBody">
       <div className="mainBody-container">
-        <SideMenu style={{ position: 'fixed', top: '50%', left: 64 }} />
-        <SideSocialLinks style={{ position: 'fixed', top: '50%' , right: 64}} />
+        <SideMenu className="mainBody-sideMenu"/>
+        <SideSocialLinks className="mainBody-socialLinks" />
       </div>
     </div>
   )

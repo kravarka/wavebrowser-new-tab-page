@@ -1,0 +1,23 @@
+:root {
+  --news-content-width: 50%;
+}
+
+.news {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.news-arrow-down-container {
+  align-self: center;
+  transform: translateY(-100%);
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: var(--header-height, 20%);
+}
+
+.news-content {
+  padding-top: var(--header-height, 20%);
+  width: var(--news-content-width, 50%);
+}

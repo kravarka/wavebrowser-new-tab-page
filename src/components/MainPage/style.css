@@ -35,11 +35,5 @@ body {
   
 }
 .mainBody-arrow-down-container {
-  align-self: center;
-  /* margin-top: -400px; */
-  transform: translateY(-100%);
-  /* margin-bottom: 32px; */
-  position: -webkit-sticky !important;
-  position: sticky !important;
-  top: 20%;
+  
 }
