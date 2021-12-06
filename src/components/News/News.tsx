@@ -2,24 +2,89 @@ import React from 'react'
 import ScrollFor from '../ScrollFor/ScrollFor'
 import { Styleable } from '../utils/utils'
 import './style.css'
+//@ts-ignore
+import Masonry from "react-responsive-masonry"
+import Icon from '../Icon/Icon'
+import { request } from 'http'
 
+const items = [
+  {
+    title: 'Lorem ipsum dolor sit ame consectetur adipiscing elit.',
+    image: 'https://i.picsum.photos/id/875/200/300.jpg?hmac=9NSoqXHP89pGlq4Sz3OgGxjx5c91YHJkcIOBFgNJ8xA'
+  },
+  {
+    title: 'Lorem ipsum  adipiscing elit.',
+    image: 'https://i.picsum.photos/id/1033/200/300.jpg?hmac=856_WOyaGXSjI4FWe3_NCHU7frPtAEJaHnAJja5TMNk'
+  },
+  {
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    image: 'https://i.picsum.photos/id/363/200/300.jpg?hmac=LvonEMeE2QnwxULuBZW5xHtdjkz844GnAPpEhDwGvMY'
+  },
+  {
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    image: 'https://i.picsum.photos/id/691/200/300.jpg?hmac=1nouilaOHm3p-SqXPrCLcCcFEtJ60GlDAwkLAHq4x-c'
+  },
+  {
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    image: 'https://i.picsum.photos/id/411/200/300.jpg?hmac=HAAfOgAOgDPvxb7JO5zY-aR9Q-mJoDxYkZqNpoadhbw'
+  },
+  {
+    title: 'Lorem ipsum dolor s',
+    image: 'https://i.picsum.photos/id/699/200/200.jpg?hmac=ueGvLUyOnWJ67372C4BTRRWlSCkroP0AtC9mSrj1Cis'
+  },
+  {
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    image: 'https://i.picsum.photos/id/1039/200/200.jpg?hmac=VpGJWDIq64ZdzDD5NAREaY7l5gX14vU5NBH84b5Fj-o'
+  },
+  {
+    title: 'Lorem ipsu consectetur adipiscing elit.',
+    image: 'https://i.picsum.photos/id/363/200/300.jpg?hmac=LvonEMeE2QnwxULuBZW5xHtdjkz844GnAPpEhDwGvMY'
+  },
+  {
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    image: 'https://i.picsum.photos/id/363/200/300.jpg?hmac=LvonEMeE2QnwxULuBZW5xHtdjkz844GnAPpEhDwGvMY'
+  },
+  {
+    title: 'Lorem ipsum ',
+    image: 'https://i.picsum.photos/id/875/200/300.jpg?hmac=9NSoqXHP89pGlq4Sz3OgGxjx5c91YHJkcIOBFgNJ8xA'
+  },
+  {
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    image: 'https://i.picsum.photos/id/363/200/300.jpg?hmac=LvonEMeE2QnwxULuBZW5xHtdjkz844GnAPpEhDwGvMY'
+  },
+  {
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    image: 'https://i.picsum.photos/id/363/200/300.jpg?hmac=LvonEMeE2QnwxULuBZW5xHtdjkz844GnAPpEhDwGvMY'
+  },
+  
+]
 export interface NewsProps extends Styleable {
 }
 export default function News(props: NewsProps) {
+  function renderMasonryGridItem() {
+    return items.map((item, i)=>{
+      return (
+        <div key={i} className="news-item">
+          <img src={item.image} className="news-item-image" />
+          <div className="news-item-info-container">
+            {item.title}
+            <div className="news-item-info-buttons">
+              <Icon src={require('../../assets/icons/Heart icon.svg').default}/>
+              <Icon src={require('../../assets/icons/Bookmarks icon.svg').default}/>
+              <Icon src={require('../../assets/icons/dots.svg').default}/>
+            </div>
+          </div>
+        </div>
+      );
+    })
+  }
   return (
     <div id="news" className="news">
         <ScrollFor className="news-arrow-down-container" title="Scroll for Lolita News" href="#news" />
         <div className="news-content">
-
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et suscipit est. Cras ut finibus dui, in vulputate neque. Nunc feugiat, nibh eu condimentum pharetra, lacus felis convallis nibh, nec imperdiet justo enim eu risus. Curabitur rutrum lorem sit amet lacus ultrices convallis. Quisque turpis arcu, hendrerit quis nisl eu, lobortis consequat lorem. Maecenas non velit neque. Sed suscipit felis a feugiat tristique. Morbi interdum orci vel condimentum venenatis. Nulla ut risus tincidunt, faucibus orci ac, facilisis quam. Praesent massa nunc, ullamcorper eget vulputate non, cursus ac nunc. Quisque lacus risus, pulvinar ut enim ac, lobortis congue velit. Morbi in risus sodales, tempor elit nec, auctor turpis. Etiam ante nunc, finibus non pulvinar ut, molestie ut dolor. Duis dapibus rhoncus sem id viverra.
-
-          Etiam interdum convallis tincidunt. Proin non massa consectetur ex vehicula mollis in a mi. Nunc eu rutrum nibh. Cras auctor neque velit, et ullamcorper ligula fringilla vel. Pellentesque in tempor ipsum, ut suscipit nibh. Suspendisse potenti. Mauris placerat vulputate accumsan. Nam lacinia nulla a consequat consequat. Vestibulum nec lobortis enim, eu porttitor metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed erat turpis, elementum in magna sit amet, porttitor placerat mauris.
-
-          Donec quis est lectus. Nam ac sapien arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed euismod, ex ac euismod egestas, elit felis dictum libero, quis blandit justo magna sed sem. Sed mauris erat, luctus non elementum id, dapibus nec lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc eu vulputate eros. Nunc posuere pulvinar tincidunt. Proin sed dolor nec lectus rutrum lobortis ut a arcu. Sed rhoncus imperdiet arcu quis condimentum.
-
-          Mauris a arcu quis nunc pretium pellentesque ac eu odio. Phasellus a eros nec leo luctus commodo vitae et odio. Quisque est ex, lobortis vitae feugiat non, luctus ac lacus. Nam convallis arcu nisi, eget feugiat mauris commodo a. Integer ornare orci aliquam dignissim facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit elementum vestibulum.
-
-          Etiam consequat ut nulla quis lobortis. In vestibulum velit eget nisi suscipit, sit amet ultricies arcu ullamcorper. Vestibulum auctor tellus ac nibh maximus fermentum at quis massa. Quisque neque purus, venenatis vel elit placerat, tincidunt feugiat nibh. Donec aliquet blandit ullamcorper. Sed eu imperdiet dolor. Fusce sem metus, malesuada ut sem quis, suscipit sollicitudin elit. Phasellus eu hendrerit justo. Vestibulum non nisl in lectus tincidunt laoreet eget et ipsum.
+          <Masonry columnsCount={3} gutter="20px">
+            {renderMasonryGridItem()}
+          </Masonry>
         </div>
       </div>
   )
