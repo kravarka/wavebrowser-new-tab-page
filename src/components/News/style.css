@@ -11,13 +11,15 @@
 
 .news-arrow-down-container {
   align-self: center;
-  transform: translateY(-100%);
+  transform: translateY(-200%);
   position: -webkit-sticky !important;
   position: sticky !important;
   top: var(--header-height, 20%);
+  margin-top: calc(var(--header-height, 20%) * -1);
 }
 
 .news-content {
   padding-top: var(--header-height, 20%);
   width: var(--news-content-width, 50%);
+  min-height: 100vh;
 }

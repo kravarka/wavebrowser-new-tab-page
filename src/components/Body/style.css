@@ -11,7 +11,7 @@
   margin-left: 64px;
   margin-right: 64px;
   /* Offset by the height of the header */
-  margin-top: calc(var(--header-height, 20%) * -1);
+  /* margin-top: calc(var(--header-height, 20%) * -1); */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
