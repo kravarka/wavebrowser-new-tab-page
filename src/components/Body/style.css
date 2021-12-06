@@ -18,18 +18,12 @@
   align-items: center;
 }
 
-.mainBody-container > * {
+/* .mainBody-container > * {
   width: 50%;
-}
+} */
 
 .mainBody-arrow-down {
 }
-
-.mainBody-arrow-down-container {
-  align-self: flex-end;
-  margin-bottom: 28px;
-}
-
 
 .mainBody-arrow-down:hover {
   filter: invert(6%) sepia(0%) saturate(95%) hue-rotate(223deg) brightness(100%) contrast(80%);

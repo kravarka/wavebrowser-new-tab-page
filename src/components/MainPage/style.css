@@ -3,18 +3,11 @@ body {
   color: white;
 }
 
-html, body {
-  width: 100%;
-  height: 100%;
-}
-
 :root {
   --blur-value: 0px;
 }
 
 .mainPage {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -40,4 +33,13 @@ html, body {
   -ms-filter: blur(var(--blur-value));
   filter: blur(var(--blur-value));
   
+}
+.mainBody-arrow-down-container {
+  align-self: center;
+  /* margin-top: -400px; */
+  transform: translateY(-100%);
+  /* margin-bottom: 32px; */
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 20%;
 }

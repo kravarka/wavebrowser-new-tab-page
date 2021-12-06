@@ -8,10 +8,8 @@ export default function Body() {
   return (
     <div className="mainBody">
       <div className="mainBody-container">
-        <SideMenu />
-        <ScrollFor className="mainBody-arrow-down-container" title="Scroll for Lolita News" href="#"/>
-        <SideSocialLinks />
-
+        <SideMenu style={{ position: 'fixed', top: '50%', left: 64 }} />
+        <SideSocialLinks style={{ position: 'fixed', top: '50%' , right: 64}} />
       </div>
     </div>
   )
