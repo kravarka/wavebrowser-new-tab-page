@@ -3,6 +3,8 @@
   flex-direction: column;
   width: 50%;
   user-select: none;
+  justify-content: center;
+  height: 100%;
 }
 
 .sideMenu-item {

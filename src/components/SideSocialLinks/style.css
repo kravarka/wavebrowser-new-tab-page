@@ -1,6 +1,8 @@
 .sideSocialLinks {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  height: 100%;
   user-select: none;
   align-items: flex-end;
 }
