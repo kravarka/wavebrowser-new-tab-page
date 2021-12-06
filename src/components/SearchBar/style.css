@@ -1,3 +1,7 @@
+:root {
+  --searchbar-top-offset: 125px;
+}
+
 .searchBar {
   width: 40%;
   min-width: 300px;
@@ -10,7 +14,7 @@
   align-items: center;
   padding-left: 8px;
   padding-right: 8px;
-  margin-top: 50px;
+  margin-top: var(--searchbar-top-offset, 125px);
   margin-left: 32px;
   margin-right: 32px;
 }
