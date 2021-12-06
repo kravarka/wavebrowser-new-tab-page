@@ -10,8 +10,8 @@ export default function SiteInfo(props: SiteInfoProps) {
     <div className={getClassName('siteInfo', props)} style={props.style}>
       <div className="siteInfo-title">Lolita Mercedes</div>
       <div className="siteInfo-container">
-        <SiteInfoRow text="ASD" value="10" valueFirst valueSize={30} textSize={20}/>
-        <SiteInfoRow text="ASD" value="10" valueSize={30} textSize={20}/>
+        <SiteInfoRow text=" ads blocked" value="10" valueFirst valueSize={30} textSize={20}/>
+        <SiteInfoRow text="Trees saved " value="0.57" valueSize={30} textSize={20}/>
       </div>
     </div>
   )
