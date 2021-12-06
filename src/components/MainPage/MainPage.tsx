@@ -5,6 +5,8 @@ import './style.css'
 
 export default function MainPage() {
   const [blur, setBlur] = useState(0);
+
+  //Register scroll event
   useEffect(() => {
     const onScroll = () => {
       const scrollPosition = window.scrollY;
@@ -17,6 +19,7 @@ export default function MainPage() {
     }
   }, [])
 
+  // Update blur effect on background
   useEffect(() => {
     document.documentElement.style.setProperty('--blur-value',`${blur}px`);
   }, [blur])
