@@ -3,13 +3,20 @@ body {
   color: white;
 }
 
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
 :root {
-  --blur-value: 8px;
+  --blur-value: 0px;
 }
 
 .mainPage {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 

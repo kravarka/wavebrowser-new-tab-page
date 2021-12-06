@@ -13,6 +13,12 @@ export default function Body() {
   }
   return (
     <div className="mainBody">
+      <div className="mainBody-container">
+        <div>asd</div>
+        <div style={{ alignSelf: 'flex-end' }}>asd</div>
+        <div>asd</div>
+
+      </div>
       {renderArrowDownContainer()}
     </div>
   )
