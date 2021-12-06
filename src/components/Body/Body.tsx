@@ -7,7 +7,7 @@ import './style.css'
 export default function Body() {
   return (
     <div className="mainBody">
-      <div className="mainBody-container">
+      <div className="mainBody-container" id="main">
         <SideMenu className="mainBody-sideMenu"/>
         <SideSocialLinks className="mainBody-socialLinks" />
       </div>

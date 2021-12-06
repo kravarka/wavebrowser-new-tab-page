@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { MouseEvent } from 'react'
 import { getClassName, Styleable } from '../utils/utils'
 import './style.css'
 
 export interface IconProps extends Styleable{
   src: string;
   href?: string;
+  onClick?: (e: MouseEvent<HTMLAnchorElement>) => void;
 }
 export default function Icon(props: IconProps) {
   function renderIcon() {
@@ -12,7 +13,7 @@ export default function Icon(props: IconProps) {
   }
   function renderLinkWithIcon() {
     return (
-      <a href={props.href}>
+      <a href={props.href} onClick={props.onClick}>
         {renderIcon()}
       </a>
     );
