@@ -1,0 +1,17 @@
+.siteInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.siteInfo-title {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  /* line-height: 45px; */
+  color: #ffffff;
+}
+
+.siteInfo-container {
+}

@@ -1,0 +1,24 @@
+.weatherInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.weatherInfo-rightside-container {
+  padding-left: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.weatherInfo-separator {
+  width: 20%;
+  height: 0px;
+  background: #0078D4;
+  border: 1.5px solid #0078D4;
+}
+
+.weatherInfo-current-time {
+  font-size: 24px;
+  font-weight: 700;
+}
