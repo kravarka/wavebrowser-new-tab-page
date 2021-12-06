@@ -29,7 +29,7 @@ export default function SearchBar(props: SearchBarProps) {
     }
   }
   return (
-    <div className={getClassName('searchBar', props)} style={getTransform()}>
+    <div className={getClassName('searchBar disableBlur', props)} style={getTransform()}>
       <Icon src={require("../../assets/icons/Search icon.svg").default}/>
       <input className="searchBar-input" placeholder="Search or type a URL"/>
       <Icon src={require("../../assets/icons/Microphone logo.svg").default}/>
