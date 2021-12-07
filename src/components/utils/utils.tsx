@@ -21,3 +21,16 @@ export function map(x: number, in_min: number, in_max: number, out_min: number, 
 export function getRandomArbitrary(min: number, max: number) {
   return Math.random() * (max - min) + min;
 }
+
+export async function getFetchData(url: string) {
+  try {
+    return await (await fetch(url, {
+      headers: {
+        'Content-Type': 'application/json'
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    })).json();
+  } catch (error) {
+    console.error(error);
+  }
+}
