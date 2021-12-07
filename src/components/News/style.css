@@ -59,6 +59,7 @@
   position: relative;
   display: inline-block;
   border: 1px solid white;
+  border-radius: 2px;
 }
 .news-item-image {
   position: relative;
