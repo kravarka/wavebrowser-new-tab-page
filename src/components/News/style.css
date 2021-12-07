@@ -1,5 +1,5 @@
 :root {
-  --news-content-width: 50%;
+  --news-content-width: var(--searchbar-width, 40%);;
 }
 
 .news {
@@ -25,7 +25,7 @@
 }
 
 .news-content {
-  width: var(--news-content-width, 50%);
+  width: var(--news-content-width, 40%) !important;
   min-height: 100vh;
 }
 
