@@ -7,7 +7,7 @@
 }
 
 .weatherInfo-rightside-container {
-  padding-left: 16px;
+  padding-left: 12px;
   display: flex;
   flex-direction: column;
 }
