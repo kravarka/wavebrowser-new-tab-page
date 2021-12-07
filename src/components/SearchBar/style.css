@@ -13,8 +13,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   margin-top: var(--searchbar-top-offset, 125px);
   margin-left: 32px;
   margin-right: 32px;
