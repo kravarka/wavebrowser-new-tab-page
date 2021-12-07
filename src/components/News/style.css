@@ -58,6 +58,7 @@
 .news-item {
   position: relative;
   display: inline-block;
+  border: 1px solid white;
 }
 .news-item-image {
   position: relative;
