@@ -17,3 +17,7 @@ export function map(x: number, in_min: number, in_max: number, out_min: number, 
     return out_max;
   return val;
 }
+
+export function getRandomArbitrary(min: number, max: number) {
+  return Math.random() * (max - min) + min;
+}
