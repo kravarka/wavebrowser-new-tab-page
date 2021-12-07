@@ -72,7 +72,7 @@
   transform: translateY(-100%);
   font-size: 14px;
   font-weight: 400;
-  text-align: center;
+  text-align: left;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -85,7 +85,7 @@
   margin: 16px;
 }
 .news-item-info-buttons > * {
-  margin-right: 16px;
+  margin-left: 16px;
   /* margin-top: 4px; */
   /* margin-bottom: 4px; */
 }
