@@ -8,10 +8,13 @@ export interface SiteInfoRowProps extends Styleable {
   text: string;
   textSize?: number;
   valueFirst?: boolean;
+  margin?: number;
 }
 export default function SiteInfoRow(props: SiteInfoRowProps) {
   function renderValue() {
-    return <span key={props.value + '-value'} className="siteInfoRow-value" style={{ fontSize: props.valueSize }}>{props.value}</span>
+    const key = props.valueFirst ? 'marginRight' : 'marginLeft';
+    const margin = { [key]: props.margin };
+    return <span key={props.value + '-value'} className="siteInfoRow-value" style={{ fontSize: props.valueSize, ...margin }}>{props.value}</span>
   }
   function renderText() {
     return props.text

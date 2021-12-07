@@ -80,9 +80,9 @@
   width: 100%;
 }
 
-.news-item-info-container > p {
-  margin-left: 20px;
-  margin-right: 20px;
+.news-item-info-container > span {
+  width: calc(100% - 48px);
+  font-size: 16px;
 }
 
 .news-item-info-buttons {
@@ -91,6 +91,11 @@
   justify-content: flex-end;
   align-self: flex-end;
   margin: 16px;
+}
+
+.news-item-info-buttons > img {
+  width: 16px;
+  height: 16px;
 }
 .news-item-info-buttons > * {
   margin-left: 16px;
