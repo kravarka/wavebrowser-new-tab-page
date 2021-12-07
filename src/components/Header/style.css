@@ -1,5 +1,4 @@
 :root {
-  --header-margin: 5vw;
   --header-height: 20vh;
 }
 
@@ -12,7 +11,7 @@
   flex-direction: row;
   padding-top: 36px;
   position: -webkit-sticky; /* Safari */
-  position: sticky;
+  position: fixed;
   top: 0;
   backdrop-filter: blur(var(--blur-value));
   z-index: 10;
@@ -23,10 +22,10 @@
 }
 
 .header > :first-child{
-  margin-left: var(--header-margin);
+  margin-left: var(--page-side-margin);
 }
 .header > :last-child{
-  margin-right: var(--header-margin);
+  margin-right: var(--page-side-margin);
   justify-content: flex-end;
   align-items: flex-start;
 }

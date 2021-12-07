@@ -1,5 +1,5 @@
 :root {
-  --news-content-width: var(--searchbar-width, 40%);;
+  --news-content-width: var(--searchbar-width, 40%);
 }
 
 .news {
@@ -9,12 +9,22 @@
   align-items: center;
 }
 
+.news-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.news-container > * {
+  width: 10%;
+}
+
 .news-arrow-down-container {
   align-self: center;
   transform: translateY(-200%);
-  position: -webkit-sticky !important;
   position: sticky !important;
-  top: 28%;
+  top: calc((var( --header-height, 20%) / 1.5) + var(--searchbar-top-offset));
   /* margin-top: calc(var(--header-height, 20%) * -1); */
 }
 
@@ -45,8 +55,8 @@
   );
 }
 .news-item {
-  position:relative;
-  display:inline-block;
+  position: relative;
+  display: inline-block;
 }
 .news-item-image {
   position: relative;

@@ -90,10 +90,15 @@ export default function News(props: NewsProps) {
   return (
     <div id="news" className="news">
       <ScrollFor className="news-arrow-down-container" title="Scroll for Lolita News" href="#news" />
-      <div className="news-content">
-        <Masonry columnsCount={2} gutter="20px">
-          {renderMasonryGridItem()}
-        </Masonry>
+      <div className="news-container">
+
+        <span />
+        <div className="news-content">
+          <Masonry columnsCount={2} gutter="20px">
+            {renderMasonryGridItem()}
+          </Masonry>
+        </div>
+        <span />
       </div>
     </div>
   )
