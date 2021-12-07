@@ -56,23 +56,28 @@ const items = [
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     image: 'https://i.picsum.photos/id/363/200/300.jpg?hmac=LvonEMeE2QnwxULuBZW5xHtdjkz844GnAPpEhDwGvMY'
   },
-  
+
 ]
 export interface NewsProps extends Styleable {
 }
 export default function News(props: NewsProps) {
+  function renderMasonryGridItemButtons() {
+    return (
+      <div className="news-item-info-buttons">
+        <Icon src={require('../../assets/icons/Heart icon.svg').default} />
+        <Icon src={require('../../assets/icons/Bookmarks icon.svg').default} />
+        <Icon src={require('../../assets/icons/dots.svg').default} />
+      </div>
+    );
+  }
   function renderMasonryGridItem() {
-    return items.map((item, i)=>{
+    return items.map((item, i) => {
       return (
         <div key={i} className="news-item">
           <img src={item.image} className="news-item-image" />
           <div className="news-item-info-container">
             {item.title}
-            <div className="news-item-info-buttons">
-              <Icon src={require('../../assets/icons/Heart icon.svg').default}/>
-              <Icon src={require('../../assets/icons/Bookmarks icon.svg').default}/>
-              <Icon src={require('../../assets/icons/dots.svg').default}/>
-            </div>
+            {renderMasonryGridItemButtons()}
           </div>
         </div>
       );
@@ -80,12 +85,12 @@ export default function News(props: NewsProps) {
   }
   return (
     <div id="news" className="news">
-        <ScrollFor className="news-arrow-down-container" title="Scroll for Lolita News" href="#news" />
-        <div className="news-content">
-          <Masonry columnsCount={3} gutter="20px">
-            {renderMasonryGridItem()}
-          </Masonry>
-        </div>
+      <ScrollFor className="news-arrow-down-container" title="Scroll for Lolita News" href="#news" />
+      <div className="news-content">
+        <Masonry columnsCount={2} gutter="20px">
+          {renderMasonryGridItem()}
+        </Masonry>
       </div>
+    </div>
   )
 }
