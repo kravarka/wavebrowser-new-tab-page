@@ -16,7 +16,7 @@ export default function SideMenu(props: SideMenuProps) {
   function renderSideMenuItem(name: string, icon: string) {
     return (
       <div className="sideMenu-item" onClick={handleClick}>
-        <Icon src={icon}/>
+        <Icon className={name.toLowerCase() + "-icon"} src={icon}/>
         <span className="sideMenu-item-name">{name}</span>
       </div>
     );
