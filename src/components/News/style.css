@@ -71,9 +71,10 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  margin: 16px;
 }
 .news-item-info-buttons > * {
-  margin-right: 8px;
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin-right: 16px;
+  /* margin-top: 4px; */
+  /* margin-bottom: 4px; */
 }
