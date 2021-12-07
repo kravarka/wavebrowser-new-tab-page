@@ -14,10 +14,11 @@
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
+  width: 100%;
 }
 
 .news-container > * {
-  width: 10%;
+  width: 30%;
 }
 
 .news-arrow-down-container {
