@@ -80,7 +80,9 @@ export default function News(props: NewsProps) {
         <div key={i} className="news-item">
           <img src={imageUrl} className="news-item-image" />
           <div className="news-item-info-container">
-            {item.title}
+            <p>
+              {item.title}
+            </p>
             {renderMasonryGridItemButtons()}
           </div>
         </div>

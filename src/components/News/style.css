@@ -74,14 +74,21 @@
   font-weight: 400;
   text-align: left;
   display: flex;
+  align-items: center;
   flex-direction: column;
   width: 100%;
+}
+
+.news-item-info-container > p {
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .news-item-info-buttons {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  align-self: flex-end;
   margin: 16px;
 }
 .news-item-info-buttons > * {
