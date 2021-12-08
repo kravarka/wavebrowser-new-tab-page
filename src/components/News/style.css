@@ -70,12 +70,14 @@
   border-radius: 2px;
   overflow: hidden;
 }
+
 .news-item-image {
   position: relative;
   width: 100%;
   height: auto;
   display: block;
   transition: all .2s ease-in-out;
+  will-change: transform;
 }
 
 .news-item-info-container {
