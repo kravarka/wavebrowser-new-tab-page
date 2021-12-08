@@ -49,11 +49,7 @@
   height: 100%;
   display: inline-block;
   background: rgb(0, 0, 0);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.6012780112044818) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(196, 196, 196, 0) 0.01%, rgba(0, 0, 0, 0.7) 100%);
 }
 .news-item {
   position: relative;
