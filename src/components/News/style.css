@@ -28,6 +28,8 @@
   position: fixed !important;
   bottom: 32px;
   z-index: 0;
+  transition: opacity 0.1s;
+  will-change: opacity;
   /* margin-top: calc(var(--header-height, 20%) * -1); */
 }
 
