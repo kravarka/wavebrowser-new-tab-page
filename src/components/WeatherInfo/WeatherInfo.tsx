@@ -17,9 +17,14 @@ export interface WeatherInfoProps extends Styleable{
 }
 export default function WeatherInfo(props: WeatherInfoProps) {
   const [weatherInfo, setWeatherInfo] = useState(defaultWeatherInfo);
+  const [currentTime, setCurrentTime] = useState(getCurrentTime());
   function getCurrentTime() {
     const date = new Date();
     return date.toTimeString().substr(0, 5);
+  }
+
+  function updateCurrentTime() {
+    setCurrentTime(getCurrentTime());
   }
 
   function getTemperature(temperature: number | string) {
@@ -38,7 +43,11 @@ export default function WeatherInfo(props: WeatherInfoProps) {
     };
     loadData();
     const loadDataInterval = setInterval(loadData, updateTimeout);
-    return () => clearInterval(loadDataInterval);
+    const updateCurrentTimeInterval = setInterval(updateCurrentTime, 1000);
+    return () => {
+      clearInterval(loadDataInterval);
+      clearInterval(updateCurrentTimeInterval);
+    }
   }, [])
 
   return (
@@ -47,7 +56,7 @@ export default function WeatherInfo(props: WeatherInfoProps) {
       <div className="weatherInfo-rightside-container">
         <SiteInfoRow text={getTemperature(weatherInfo.temp)} value={weatherInfo.city} valueSize={16} textSize={16} marginLeft={8}/>
         <div className="weatherInfo-separator"/>
-        <div className="weatherInfo-current-time">{getCurrentTime()}</div>
+        <div className="weatherInfo-current-time">{currentTime}</div>
       </div>
     </div>
   )
