@@ -24,12 +24,11 @@ export function getRandomArbitrary(min: number, max: number) {
 
 export async function getFetchData(url: string) {
   try {
-    return await (await fetch(url, {
-      headers: {
-        'Content-Type': 'application/json'
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    })).json();
+    const options = {
+      method: 'GET'
+    }
+    const response = await fetch(url, options);
+    return await response.json();
   } catch (error) {
     console.error(error);
   }
