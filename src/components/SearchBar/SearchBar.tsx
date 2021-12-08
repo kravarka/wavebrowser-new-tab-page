@@ -14,7 +14,7 @@ export default function SearchBar(props: SearchBarProps) {
     const onScroll = () => {
       const scrollPosition = window.scrollY;
       const headerHeight = window.innerHeight * (defaultHeaderPercentage / 100);
-      const _translateY = map(scrollPosition, 0, headerHeight, 0, defaultPosition);
+      const _translateY = map(scrollPosition, 0, headerHeight, 0, defaultPosition, true);
       setTranslateY(_translateY * -1);
     };
     document.addEventListener('scroll', onScroll, { passive: true });

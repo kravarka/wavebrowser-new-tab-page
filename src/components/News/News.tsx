@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ScrollFor from '../ScrollFor/ScrollFor'
-import { getRandomArbitrary, Styleable } from '../utils/utils'
+import { getRandomArbitrary, map, Styleable } from '../utils/utils'
 import './style.css'
 //@ts-ignore
 import Masonry from "react-responsive-masonry"
@@ -61,6 +61,8 @@ export interface NewsProps extends Styleable {
 }
 export default function News(props: NewsProps) {
   const [items, setItems] = useState(defaultItems);
+  const [waypointOffset, setWaypointOffset] = useState({ offsetBottom: 0, height: 0, offsetTop: 0 });
+  const [arrowDownOpacity, setArrowDownOpacity] = useState(1);
 
   useEffect(() => {
     const newItems: { title: string, image: string }[] = [];
@@ -75,8 +77,40 @@ export default function News(props: NewsProps) {
       });
     });
     setItems(newItems);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Get waypoint offset
+  useEffect(() => {
+    const arrowDown = document.querySelector(".news-arrow-down-container");
+    if (arrowDown) {
+      const rect = arrowDown.getBoundingClientRect();
+      const waypoint = {
+        offsetBottom: window.innerHeight - rect.bottom,
+        offsetTop: window.innerHeight - rect.top,
+        height: rect.height,
+      }
+      setWaypointOffset(waypoint);
+    }
+  }, []);
+
+  // Register scroll event
+  useEffect(() => {
+    const onScroll = () => {
+      const scrollPosition = window.scrollY;
+      const arrowDown = document.querySelector(".news-arrow-down-container");
+      if (arrowDown) {
+        var opacity = map(scrollPosition, waypointOffset.offsetBottom, waypointOffset.offsetBottom + waypointOffset.height, 1, 0);
+        opacity = Math.max(0, opacity);
+        opacity = Math.min(1, opacity);
+          setArrowDownOpacity(opacity);
+      }
+    };
+    document.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      document.removeEventListener('scroll', onScroll);
+    }
+  }, [waypointOffset])
 
   function renderMasonryGridItemButtons() {
     return (
@@ -103,9 +137,8 @@ export default function News(props: NewsProps) {
   }
   return (
     <div id="news" className="news">
-      <ScrollFor className="news-arrow-down-container" title="Scroll for Lolita News" href="#news" />
+      <ScrollFor className="news-arrow-down-container" style={{ opacity: arrowDownOpacity }} title="Scroll for Lolita News" href="#news" />
       <div className="news-container">
-
         <span />
         <div className="news-content">
           <Masonry columnsCount={2} gutter="20px">
