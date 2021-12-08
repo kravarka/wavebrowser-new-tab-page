@@ -79,7 +79,8 @@
 
 .news-item-info-container > span {
   width: calc(100% - 48px);
-  font-size: 16px;
+  font-size: 18px;
+  letter-spacing: 1px;
 }
 
 .news-item-info-buttons {
@@ -91,8 +92,8 @@
 }
 
 .news-item-info-buttons > img {
-  width: 16px;
-  height: 16px;
+  /* width: 16px;
+  height: 16px; */
 }
 .news-item-info-buttons > * {
   margin-left: 16px;
