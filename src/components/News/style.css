@@ -69,6 +69,7 @@
   border: 1px solid white;
   border-radius: 2px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .news-item-image {
