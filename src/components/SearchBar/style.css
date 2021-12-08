@@ -1,10 +1,10 @@
 :root {
   --searchbar-top-offset: 125px;
-  --searchbar-width: 600px;
+  --searchbar-width: 700px;
 }
 
 .searchBar {
-  width: var(--searchbar-width, 600px) !important;
+  width: var(--searchbar-width, 700px) !important;
   min-width: 300px;
   height: 46px;
   background: #3b3b3b;
