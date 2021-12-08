@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ScrollFor from '../ScrollFor/ScrollFor'
 import { getRandomArbitrary, Styleable } from '../utils/utils'
 import './style.css'
@@ -7,7 +7,7 @@ import Masonry from "react-responsive-masonry"
 import Icon from '../Icon/Icon'
 import { request } from 'http'
 
-const items = [
+const defaultItems = [
   {
     title: 'Lorem ipsum dolor sit ame consectetur adipiscing elit.',
     image: 'https://picsum.photos'
@@ -61,6 +61,23 @@ const items = [
 export interface NewsProps extends Styleable {
 }
 export default function News(props: NewsProps) {
+  const [items, setItems] = useState(defaultItems);
+
+  useEffect(() => {
+    const newItems: { title: string, image: string }[] = [];
+    items.forEach((item, i) => {
+      const width = Math.floor(getRandomArbitrary(200, 300));
+      const height = Math.floor(getRandomArbitrary(200, 300));
+      const urlPath = `/${width}/${height}`;
+      const imageUrl = `${item.image}${urlPath}?random=${getRandomArbitrary(1, 50)}`;
+      newItems.push({
+        title: item.title,
+        image: imageUrl,
+      });
+    });
+    setItems(newItems);
+  }, []);
+
   function renderMasonryGridItemButtons() {
     return (
       <div className="news-item-info-buttons">
@@ -72,14 +89,10 @@ export default function News(props: NewsProps) {
   }
   function renderMasonryGridItem() {
     return items.map((item, i) => {
-      const width = Math.floor(getRandomArbitrary(200, 300));
-      const height = Math.floor(getRandomArbitrary(200, 300));
-      const urlPath = `/${width}/${height}`;
-      const imageUrl = `${item.image}${urlPath}?random=${getRandomArbitrary(1, 50)}`
       return (
         <div key={i} className="news-item">
           <Icon src={require('../../assets/icons/Close icon.svg').default} className="news-item-close-icon" />
-          <img src={imageUrl} className="news-item-image" />
+          <img src={item.image} className="news-item-image" />
           <div className="news-item-info-container">
             <span>{item.title}</span>
             {renderMasonryGridItemButtons()}
