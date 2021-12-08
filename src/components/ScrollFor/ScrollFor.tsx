@@ -16,9 +16,14 @@ export default function ScrollFor(props: ScrollForProps) {
   const [anchorDirection, setAnchorDirection] = useState<'top' | 'down'>('down');
   function handleToggle(e: MouseEvent<HTMLAnchorElement>) {
     const target = e.currentTarget
+    e.preventDefault();
     target.classList.toggle('scrollFor-arrow-clicked');
-    setAnchorDirection(anchorDirection === 'top' ? 'down' : 'top');
-
+    const direction = anchorDirection === 'top' ? 'down' : 'top';
+    setAnchorDirection(direction);
+    const href = anchorMap[direction];
+    document.querySelector(href)?.scrollIntoView({
+      behavior: 'smooth'
+    });
   }
   const anchorHref = anchorMap[anchorDirection];
   return (
