@@ -12,7 +12,7 @@
 }
 
 .scrollFor-arrow-down:hover {
-  filter: invert(6%) sepia(0%) saturate(95%) hue-rotate(223deg) brightness(100%) contrast(80%);
+  /* filter: invert(6%) sepia(0%) saturate(95%) hue-rotate(223deg) brightness(100%) contrast(80%); */
 }
 
 .scrollFor-arrow-clicked {

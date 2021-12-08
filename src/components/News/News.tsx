@@ -137,7 +137,7 @@ export default function News(props: NewsProps) {
   }
   return (
     <div id="news" className="news">
-      <ScrollFor className="news-arrow-down-container" style={{ opacity: arrowDownOpacity }} title="Scroll for Lolita News" href="#news" />
+      <ScrollFor className="news-arrow-down-container" style={{ opacity: arrowDownOpacity }} title="Scroll for Lolita News" />
       <div className="news-container">
         <span />
         <div className="news-content">
