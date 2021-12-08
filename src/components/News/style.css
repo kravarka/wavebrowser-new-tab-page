@@ -80,7 +80,7 @@
 .news-item-info-container > span {
   width: calc(100% - 48px);
   font-size: 18px;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .news-item-info-buttons {
