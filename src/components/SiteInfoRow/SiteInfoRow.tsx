@@ -7,24 +7,29 @@ export interface SiteInfoRowProps extends Styleable {
   valueSize?: number;
   text: string;
   textSize?: number;
+  suffix?: string;
   valueFirst?: boolean;
   margin?: number;
 }
 export default function SiteInfoRow(props: SiteInfoRowProps) {
   function renderValue() {
-    const key = props.valueFirst ? 'marginRight' : 'marginLeft';
-    const margin = { [key]: props.margin };
+    const margin = { marginLeft: props.margin, marginRight: props.margin }
     return <span key={props.value + '-value'} className="siteInfoRow-value" style={{ fontSize: props.valueSize, ...margin }}>{props.value}</span>
   }
   function renderText() {
     return props.text
   }
+
+  function renderSuffix() {
+    return props.suffix || '';
+  }
+
   function renderBody() {
     const body = [renderText(), renderValue()];
     if(props.valueFirst){
       body.reverse();
     }
-    return body;
+    return [body, renderSuffix()];
   }
   const customStyle: CSSProperties = {
     fontSize: props.textSize,
