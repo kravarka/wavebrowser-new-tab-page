@@ -51,7 +51,7 @@
 .sideMenu-item-selected.sideMenu-item {
   border: 1.5px solid #0078D4;
   background: #0078D4;
-  max-width: 200px;
+  /* max-width: 200px; */
 }
 
 .media-icon {
