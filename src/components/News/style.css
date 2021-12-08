@@ -23,9 +23,9 @@
 
 .news-arrow-down-container {
   align-self: center;
-  transform: translateY(-200%);
+  /* transform: translateY(-200%); */
   position: sticky !important;
-  top: calc((var( --header-height, 20%) / 1.5) + var(--searchbar-top-offset));
+  top: calc(var( --header-height, 20%) / 2);
   /* margin-top: calc(var(--header-height, 20%) * -1); */
 }
 
