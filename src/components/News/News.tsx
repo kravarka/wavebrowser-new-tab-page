@@ -78,6 +78,7 @@ export default function News(props: NewsProps) {
       const imageUrl = `${item.image}${urlPath}?random=${getRandomArbitrary(1, 50)}`
       return (
         <div key={i} className="news-item">
+          <Icon src={require('../../assets/icons/Close icon.svg').default} className="news-item-close-icon" />
           <img src={imageUrl} className="news-item-image" />
           <div className="news-item-info-container">
             <span>{item.title}</span>
