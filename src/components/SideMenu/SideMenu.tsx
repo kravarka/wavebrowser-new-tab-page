@@ -13,9 +13,9 @@ export default function SideMenu(props: SideMenuProps) {
     e.currentTarget.classList.toggle('sideMenu-item-selected');
   }
 
-  function renderSideMenuItem(name: string, icon: string) {
+  function renderSideMenuItem(name: string, icon: string, selected?: boolean) {
     return (
-      <div className="sideMenu-item" onClick={handleClick}>
+      <div className={`sideMenu-item ${selected && 'sideMenu-item-selected'}`} onClick={handleClick}>
         <Icon className={name.toLowerCase() + "-icon"} src={icon}/>
         <span className="sideMenu-item-name">{name}</span>
       </div>
@@ -23,7 +23,7 @@ export default function SideMenu(props: SideMenuProps) {
   }
   return (
     <div className={getClassName("sideMenu", props)} style={props.style}>
-      {renderSideMenuItem('Home', require('../../assets/icons/Home icon.svg').default)}
+      {renderSideMenuItem('Home', require('../../assets/icons/Home icon.svg').default, true)}
       {renderSideMenuItem('Media', require('../../assets/icons/Media icon.svg').default)}
       {renderSideMenuItem('Links', require('../../assets/icons/Links icon.svg').default)}
     </div>
