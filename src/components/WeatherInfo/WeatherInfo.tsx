@@ -5,6 +5,7 @@ import { WEATHER_INFO_API } from '../utils/constants'
 import { getClassName, getFetchData, Styleable } from '../utils/utils'
 import './style.css'
 
+const updateTimeout = 60000;
 const defaultWeatherInfo = {
   temp: 23,
   weather: 'sunny',
@@ -31,7 +32,7 @@ export default function WeatherInfo(props: WeatherInfoProps) {
       setWeatherInfo(response);
     };
     loadData();
-    const loadDataInterval = setInterval(loadData, 10000);
+    const loadDataInterval = setInterval(loadData, updateTimeout);
     return () => clearInterval(loadDataInterval);
   }, [])
 
