@@ -7,10 +7,11 @@ import './style.css'
 
 const updateTimeout = 60000;
 const defaultWeatherInfo = {
-  temp: 23,
+  temp: '-',
   weather: 'sunny',
   iconUrl: require('../../assets/icons/Sun icon.svg').default,
-  city: 'Sofia',
+  iconUrl2x: '',
+  city: '--',
 }
 export interface WeatherInfoProps extends Styleable{
 }
@@ -21,8 +22,12 @@ export default function WeatherInfo(props: WeatherInfoProps) {
     return date.toTimeString().substr(0, 5);
   }
 
-  function getTemperature(temperature: number) {
+  function getTemperature(temperature: number | string) {
     return `${temperature} ° C`;
+  }
+
+  function getSrcSet() {
+    return `${weatherInfo.iconUrl} 1x, ${weatherInfo.iconUrl2x} 2x`;
   }
 
   useEffect(() => {
@@ -38,7 +43,7 @@ export default function WeatherInfo(props: WeatherInfoProps) {
 
   return (
     <div className={getClassName('weatherInfo', props)} style={props.style}>
-      <Icon className="weatherInfo-icon" src={weatherInfo.iconUrl}/>
+      <Icon className="weatherInfo-icon" src={weatherInfo.iconUrl} srcSet={getSrcSet()} />
       <div className="weatherInfo-rightside-container">
         <SiteInfoRow text={getTemperature(weatherInfo.temp)} value={weatherInfo.city} valueSize={16} textSize={16} marginLeft={8}/>
         <div className="weatherInfo-separator"/>
