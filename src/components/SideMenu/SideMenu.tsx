@@ -1,4 +1,4 @@
-import React, { MouseEvent, MouseEventHandler } from 'react'
+import React, { MouseEvent } from 'react'
 import Icon from '../Icon/Icon'
 import { getClassName, Styleable } from '../utils/utils'
 import './style.css'

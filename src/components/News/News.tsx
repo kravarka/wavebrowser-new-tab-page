@@ -5,7 +5,6 @@ import './style.css'
 //@ts-ignore
 import Masonry from "react-responsive-masonry"
 import Icon from '../Icon/Icon'
-import { request } from 'http'
 
 const defaultItems = [
   {
@@ -76,6 +75,7 @@ export default function News(props: NewsProps) {
       });
     });
     setItems(newItems);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function renderMasonryGridItemButtons() {
@@ -92,7 +92,7 @@ export default function News(props: NewsProps) {
       return (
         <div key={i} className="news-item">
           <Icon src={require('../../assets/icons/Close icon.svg').default} className="news-item-close-icon" />
-          <img src={item.image} className="news-item-image" />
+          <img src={item.image} alt="" className="news-item-image" />
           <div className="news-item-info-container">
             <span>{item.title}</span>
             {renderMasonryGridItemButtons()}
