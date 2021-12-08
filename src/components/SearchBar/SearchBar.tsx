@@ -3,7 +3,7 @@ import Icon from '../Icon/Icon'
 import { getClassName, map, Styleable } from '../utils/utils'
 import './style.css'
 
-const defaultPosition = 125;
+const defaultPosition = 78;
 const defaultHeaderPercentage = 20;
 export interface SearchBarProps extends Styleable{
 

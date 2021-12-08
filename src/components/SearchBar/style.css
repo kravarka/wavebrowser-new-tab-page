@@ -1,5 +1,5 @@
 :root {
-  --searchbar-top-offset: 125px;
+  --searchbar-top-offset: 78px;
   --searchbar-width: 700px;
 }
 
@@ -15,7 +15,7 @@
   align-items: center;
   padding-left: 16px;
   padding-right: 16px;
-  margin-top: var(--searchbar-top-offset, 125px);
+  margin-top: var(--searchbar-top-offset, 78px);
   margin-left: 32px;
   margin-right: 32px;
 }
