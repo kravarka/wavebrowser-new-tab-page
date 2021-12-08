@@ -1,7 +1,11 @@
 .siteInfo {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-starts;
+}
+
+.siteInfo > * {
+  margin-bottom: 32px;
 }
 
 .siteInfo-title {
