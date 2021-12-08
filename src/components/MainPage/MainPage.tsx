@@ -12,7 +12,7 @@ export default function MainPage() {
   useEffect(() => {
     const onScroll = () => {
       const scrollPosition = window.scrollY;
-      const _blur = map(scrollPosition, 0, window.innerHeight / 2, 0, 8);
+      const _blur = map(scrollPosition, 0, window.innerHeight, 0, 8);
       setBlur(_blur);
     };
     document.addEventListener('scroll', onScroll, { passive: true });
