@@ -40,7 +40,7 @@ export default function WeatherInfo(props: WeatherInfoProps) {
     <div className={getClassName('weatherInfo', props)} style={props.style}>
       <Icon className="weatherInfo-icon" src={weatherInfo.iconUrl}/>
       <div className="weatherInfo-rightside-container">
-        <SiteInfoRow text={getTemperature(weatherInfo.temp)} value={weatherInfo.city} valueSize={16} textSize={16} margin={8}/>
+        <SiteInfoRow text={getTemperature(weatherInfo.temp)} value={weatherInfo.city} valueSize={16} textSize={16} marginLeft={8}/>
         <div className="weatherInfo-separator"/>
         <div className="weatherInfo-current-time">{getCurrentTime()}</div>
       </div>
