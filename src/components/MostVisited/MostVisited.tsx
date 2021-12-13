@@ -12,8 +12,10 @@ export default function MostVisited() {
   useEffect(() => {
     if((window as any).chrome instanceof Object) {
       if((window as any).chrome.embeddedSearch instanceof Object) {
-        const mostVisited = (window as any).chrome.embeddedSearch.mostVisited as MostVisitedItem[];
-        setMostVisitedSites(mostVisited);
+        try {
+          const mostVisited = (window as any).chrome.embeddedSearch.newTabPage.mostVisited as MostVisitedItem[];
+          setMostVisitedSites(mostVisited);
+        } catch (error) { }
       }
     }
   }, []);
