@@ -35,3 +35,17 @@ export async function getFetchData(url: string) {
     console.error(error);
   }
 }
+
+export function getParameterByName(name: string, url = window.location.href) {
+  name = name.replace(/[\[\]]/g, '\\$&');
+  var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+      results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+export function handleSearch(q: string) {
+  if(q.length > 0)
+    window.location.href = `https://www.bing.com/search?q=${encodeURIComponent(q)}`;
+}

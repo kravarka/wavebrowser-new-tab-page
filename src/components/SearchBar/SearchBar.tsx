@@ -1,6 +1,6 @@
 import React, { KeyboardEvent, KeyboardEventHandler, useEffect, useState } from 'react'
 import Icon from '../Icon/Icon'
-import { getClassName, map, Styleable } from '../utils/utils'
+import { getClassName, handleSearch, map, Styleable } from '../utils/utils'
 import './style.css'
 
 const defaultPosition = 95;
@@ -28,11 +28,6 @@ export default function SearchBar(props: SearchBarProps) {
     return {
       transform: `translateY(${translateY}px)`
     }
-  }
-
-  function handleSearch(q: string) {
-    if(q.length > 0)
-      window.location.href = `https://www.bing.com/search?q=${encodeURIComponent(q)}`;
   }
 
   function handleKeyDown(e: KeyboardEvent<HTMLInputElement>) {
