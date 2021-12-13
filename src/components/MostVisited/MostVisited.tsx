@@ -37,12 +37,20 @@ export default function MostVisited() {
   }, []);
 
   function renderItem(item: MostVisitedItem) {
-    const url = `chrome-search://most-visited/title.html?rid=${item.rid}&f=mulish&fs=14&c=FFFFFFFF`;
+    const url = `chrome-search://most-visited/title.html?rid=${item.rid}&f=mulish&c=FFFFFFFF`;
     return (
       <div className="mostVisitedItem">
+        <iframe src={url + "&fs=0"} title={`most-visited-item-${item.rid}`} className="mostVisitedItemFrame" />
         <Icon src={item.faviconUrl} className="mostVisitedItemIcon"/>
-        <iframe src={url} title={`most-visited-item-${item.rid}`}/>
-        <Icon src={require("../../assets/icons/Close icon.svg").default} className="mostVisitedItemCloseIcon" onClick={() => handleRemoveMostVisitedSite(item)}/>
+        <iframe src={url + "&fs=14"} title={`most-visited-item-${item.rid}`}/>
+        <Icon
+          src={require("../../assets/icons/Close icon.svg").default}
+          className="mostVisitedItemCloseIcon"
+          onClick={(e) => {
+            e.stopPropagation();
+            handleRemoveMostVisitedSite(item)
+          }}
+        />
       </div>
     );
   }

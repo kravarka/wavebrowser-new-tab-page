@@ -8,6 +8,13 @@
   margin: 16px;
 }
 
+.mostVisitedItemFrame {
+  width: 100%;
+  /* Based on the font size */
+  height: 100%;
+  position: absolute;
+}
+
 .mostVisitedItem > iframe {
   width: calc(100% - 20px);
   /* Based on the font size */
