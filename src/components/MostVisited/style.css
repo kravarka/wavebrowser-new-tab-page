@@ -1,0 +1,9 @@
+.mostVisited {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.mostVisited > * {
+  margin: 8px;
+}
