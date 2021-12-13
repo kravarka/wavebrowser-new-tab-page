@@ -5,5 +5,26 @@
 }
 
 .mostVisited > * {
-  margin: 8px;
+  margin: 16px;
+}
+
+.mostVisitedItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 84px;
+  height: 60px;
+  background: #494949;
+  border-radius: 5px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #FFFFFF;
+}
+
+.mostVisitedItemIcon {
+  width: 30px;
+  height: 30px;
 }
