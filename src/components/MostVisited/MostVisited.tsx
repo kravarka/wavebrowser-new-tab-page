@@ -8,32 +8,47 @@ export interface MostVisitedItem {
 }
 export default function MostVisited() {
   const [mostVisitedSites, setMostVisitedSites] = useState<MostVisitedItem[]>([]);
+
+  function getMostVisitedSites() {
+    try {
+      const mostVisited = (window as any).chrome.embeddedSearch.newTabPage.mostVisited as MostVisitedItem[];
+      setMostVisitedSites(mostVisited);
+    } catch (error) { }
+  }
+
+  function handleRemoveMostVisitedSite(item: MostVisitedItem) {
+    try {
+      (window as any).chrome.embeddedSearch.newTabPage.deleteMostVisitedItem(item.rid);
+    } catch (error) {
+      
+    }
+  }
+
   // Load most visited sites
   useEffect(() => {
     if((window as any).chrome instanceof Object) {
       if((window as any).chrome.embeddedSearch instanceof Object) {
         try {
-          const mostVisited = (window as any).chrome.embeddedSearch.newTabPage.mostVisited as MostVisitedItem[];
-          setMostVisitedSites(mostVisited);
+          getMostVisitedSites();
+          (window as any).chrome.embeddedSearch.newTabPage.onmostvisitedchange = getMostVisitedSites;
         } catch (error) { }
       }
     }
   }, []);
 
-  function renderItem(url: string, iconUrl: string) {
+  function renderItem(item: MostVisitedItem) {
+    const url = `chrome-search://most-visited/title.html?rid=${item.rid}&f=mulish&fs=14&c=FFFFFFFF`;
     return (
       <div className="mostVisitedItem">
-        <Icon src={iconUrl} className="mostVisitedItemIcon"/>
-        <iframe src={url} />
+        <Icon src={item.faviconUrl} className="mostVisitedItemIcon"/>
+        <iframe src={url} title={`most-visited-item-${item.rid}`}/>
+        <Icon src={require("../../assets/icons/Close icon.svg").default} className="mostVisitedItemCloseIcon" onClick={() => handleRemoveMostVisitedSite(item)}/>
       </div>
     );
   }
 
   function renderMostVisitedSites() {
-    return mostVisitedSites.map(item=>{
-      const url = `chrome-search://most-visited/title.html?rid=${item.rid}&f=mulish&fs=14&c=FFFFFFFF`;
-      return renderItem(url, item.faviconUrl);
-    });
+    return mostVisitedSites.map(item=> renderItem(item));
   }
 
   return (

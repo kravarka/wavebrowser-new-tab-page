@@ -9,10 +9,23 @@
 }
 
 .mostVisitedItem > iframe {
-  width: 100%;
+  width: calc(100% - 20px);
   /* Based on the font size */
   height: 14px; 
   border: none;
+}
+
+.mostVisitedItemCloseIcon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.mostVisitedItem:hover > .mostVisitedItemCloseIcon {
+  opacity: 1;
 }
 
 .mostVisitedItem {
@@ -29,6 +42,7 @@
   font-size: 14px;
   line-height: 18px;
   color: #FFFFFF;
+  position: relative;
 }
 
 .mostVisitedItemIcon {
