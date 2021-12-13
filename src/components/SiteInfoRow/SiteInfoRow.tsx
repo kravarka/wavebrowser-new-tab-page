@@ -5,6 +5,7 @@ import './style.css'
 export interface SiteInfoRowProps extends Styleable {
   value: string;
   valueSize?: number;
+  valueId?: string;
   text: string;
   textSize?: number;
   suffix?: string;
@@ -16,7 +17,11 @@ export interface SiteInfoRowProps extends Styleable {
 export default function SiteInfoRow(props: SiteInfoRowProps) {
   function renderValue() {
     const margin = { marginLeft: props.marginLeft, marginRight: props.marginRight }
-    return <span key={props.value + '-value'} className="siteInfoRow-value" style={{ fontSize: props.valueSize, ...margin }}>{props.value}</span>
+    return (
+      <span key={props.value + '-value'} id={props.valueId} className="siteInfoRow-value" style={{ fontSize: props.valueSize, ...margin }}>
+        {props.value}
+      </span>
+    );
   }
   function renderText() {
     return props.text
@@ -28,7 +33,7 @@ export default function SiteInfoRow(props: SiteInfoRowProps) {
 
   function renderBody() {
     const body = [renderText(), renderValue()];
-    if(props.valueFirst){
+    if (props.valueFirst) {
       body.reverse();
     }
     return [body, renderSuffix()];
