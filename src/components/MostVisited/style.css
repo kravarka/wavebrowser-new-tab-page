@@ -10,7 +10,8 @@
 
 .mostVisitedItem > iframe {
   width: 100%;
-  height: 20%;
+  /* Based on the font size */
+  height: 14px; 
   border: none;
 }
 
