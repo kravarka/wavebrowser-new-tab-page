@@ -8,6 +8,12 @@
   margin: 16px;
 }
 
+.mostVisitedItem > iframe {
+  width: 100%;
+  height: 20%;
+  border: none;
+}
+
 .mostVisitedItem {
   display: flex;
   flex-direction: column;
