@@ -31,7 +31,7 @@ export default function MostVisited() {
 
   function renderMostVisitedSites() {
     return mostVisitedSites.map(item=>{
-      const url = `chrome-search://most-visited/title.html?rid=${item.rid}&c=FFFFFF`;
+      const url = `chrome-search://most-visited/title.html?rid=${item.rid}&c=FFFFFF&f=mulish&fs=14`;
       return renderItem(url, item.faviconUrl);
     });
   }
