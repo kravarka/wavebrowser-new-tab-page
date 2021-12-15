@@ -3,16 +3,13 @@
   justify-content: space-between;
   align-items: center;
   /* height: calc(100vh - (var(--header-height)) / 2); */
-  height: 100vh;
+  /* height: 100vh; */
+  width: 100vw;
+  height: 90vh;
 }
 
 .mainBody-container {
-  width: 100%;
-  height: 100vh;
-  /* margin-left: var(--page-side-margin, 48px);
-  margin-right: var(--page-side-margin, 48px); */
-  /* Offset by the height of the header */
-  margin-top: calc(var(--header-height, 20%) * -1);
+  
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -39,6 +36,13 @@
 
 .mainBody-socialLinks {
   position: fixed;
-  top: 0%;
+  top: 0vh;
   right: var(--page-side-margin, 48px);
+}
+
+.mainBody-mostVisited {
+  position: fixed;
+  bottom: 100px;
+  left: 0;
+  right: 0;
 }

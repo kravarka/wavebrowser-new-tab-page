@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Body from '../Body/Body';
 import Header from '../Header/Header'
 import News from '../News/News';
+import SearchBar from '../SearchBar/SearchBar';
 import { map } from '../utils/utils';
 import './style.css'
 
@@ -29,6 +30,8 @@ export default function MainPage() {
   return (
     <div className="mainPage">
       <Header />
+      <SearchBar />
+      <div className="searchBar-background"/>
       <Body />
       <News />
     </div >

@@ -49,3 +49,15 @@ export function handleSearch(q: string) {
   if(q.length > 0)
     window.location.href = `https://www.bing.com/search?q=${encodeURIComponent(q)}`;
 }
+
+export const observer = new IntersectionObserver(
+  function (entries, observer) {
+    for (var _i = 0; _i < entries.length; _i++) {
+      var stickyHeader = entries[_i].target.nextSibling;
+      if(stickyHeader){
+        (stickyHeader as any).toggleAttribute('stuck', !entries[_i].isIntersecting)
+      }
+    }
+  },
+  {}
+)

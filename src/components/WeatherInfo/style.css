@@ -4,12 +4,14 @@
   justify-content: center;
   align-items: center;
   min-width: 170px;
+  height: 100%;
 }
 
 .weatherInfo-rightside-container {
-  padding-left: 12px;
+  padding-left: 6px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .weatherInfo-separator {
@@ -20,12 +22,12 @@
 }
 
 .weatherInfo-current-time {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 400;
   letter-spacing: 0.03rem;
 }
 
 .weatherInfo-icon {
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
 }

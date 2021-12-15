@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import Icon from '../Icon/Icon';
+import { getClassName, Styleable } from '../utils/utils';
 import './style.css'
 
 export interface MostVisitedItem {
   rid: number;
   faviconUrl: string;
 }
-export default function MostVisited() {
+export interface MostVisitedProps extends Styleable {
+
+}
+export default function MostVisited(props: MostVisitedProps) {
   const [mostVisitedSites, setMostVisitedSites] = useState<MostVisitedItem[]>([]);
 
   function getMostVisitedSites() {
@@ -56,11 +60,18 @@ export default function MostVisited() {
   }
 
   function renderMostVisitedSites() {
-    return mostVisitedSites.map(item=> renderItem(item));
+    // return mostVisitedSites.map(item=> renderItem(item));
+    const item = (
+      <div className="mostVisitedItem">
+        <Icon src={"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.freebiesupply.com%2Flogos%2Flarge%2F2x%2Fgithub-icon-logo-png-transparent.png&f=1&nofb=1"} className="mostVisitedItemIcon"/>
+        <div className="mostVisitedItemFrame">asd</div>
+      </div>
+    );
+    return Array(4).fill(item);
   }
 
   return (
-    <div className="mostVisited">
+    <div className={getClassName("mostVisited", props)} style={props.style}>
       {renderMostVisitedSites()}
     </div>
   )

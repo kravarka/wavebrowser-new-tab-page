@@ -1,6 +1,6 @@
-import React, { KeyboardEvent, KeyboardEventHandler, useEffect, useState } from 'react'
+import React, { KeyboardEvent, KeyboardEventHandler, useEffect, useRef, useState } from 'react'
 import Icon from '../Icon/Icon'
-import { getClassName, handleSearch, map, Styleable } from '../utils/utils'
+import { getClassName, handleSearch, map, observer, Styleable } from '../utils/utils'
 import './style.css'
 
 const defaultPosition = 95;
@@ -9,26 +9,14 @@ export interface SearchBarProps extends Styleable {
 
 }
 export default function SearchBar(props: SearchBarProps) {
-  const [translateY, setTranslateY] = useState(0);
   const [searchValue, setSearchValue] = useState('');
-  useEffect(() => {
-    const onScroll = () => {
-      const scrollPosition = window.scrollY;
-      const headerHeight = window.innerHeight * (defaultHeaderPercentage / 100);
-      const _translateY = map(scrollPosition, 0, headerHeight, 0, defaultPosition, true);
-      setTranslateY(_translateY * -1);
-    };
-    document.addEventListener('scroll', onScroll, { passive: true });
-    return () => {
-      document.removeEventListener('scroll', onScroll);
-    }
-  }, [])
 
-  function getTransform() {
-    return {
-      transform: `translateY(${translateY}px)`
+  useEffect(()=>{
+    const searchBar = document.querySelector('.header');
+    if(searchBar){
+      observer.observe(searchBar);
     }
-  }
+  }, []);
 
   function handleKeyDown(e: KeyboardEvent<HTMLInputElement>) {
     if (e.code === 'Enter' || e.code === 'NumpadEnter') {
@@ -42,7 +30,7 @@ export default function SearchBar(props: SearchBarProps) {
   }
 
   return (
-    <div className={getClassName('searchBar', props)} style={getTransform()}>
+    <div className={getClassName('searchBar', props)}>
       <Icon src={require("../../assets/icons/Search icon.svg").default} onClick={handleButtonClick} />
       <input
         value={searchValue}

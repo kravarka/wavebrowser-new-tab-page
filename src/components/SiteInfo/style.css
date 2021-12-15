@@ -1,18 +1,20 @@
 .siteInfo {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .siteInfo > * {
-  margin-bottom: 32px;
+  /* margin-bottom: 32px; */
 }
 
 .siteInfo-title {
   font-family: Mulish;
   font-style: normal;
   font-weight: 400;
-  font-size: 36px;
+  font-size: 20px;
   /* line-height: 45px; */
   color: #ffffff;
 }

@@ -1,5 +1,5 @@
 :root {
-  --header-height: 20vh;
+  --header-height: 50px;
 }
 
 .header {
@@ -9,18 +9,23 @@
   min-height: var(--header-height, 20%);
   justify-content: space-between;
   flex-direction: row;
-  padding-top: 36px;
-  position: -webkit-sticky; /* Safari */
-  position: fixed;
+  align-items: flex-start;
+  padding-top: 12px;
+  /* position: fixed; */
   top: 0;
   z-index: 10;
   background: rgb(0,0,0);
   background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,1) 100%);
 }
 
-.header > * {
-  width: 25%;
+.header-title {
+  display: flex;
+  justify-content: center;
 }
+
+/* .header > * {
+  width: 50%;
+} */
 
 .header > :first-child{
   margin-left: var(--page-side-margin);
@@ -28,5 +33,5 @@
 .header > :last-child{
   margin-right: var(--page-side-margin);
   justify-content: flex-end;
-  align-items: flex-start;
+  margin-top: -3px;
 }

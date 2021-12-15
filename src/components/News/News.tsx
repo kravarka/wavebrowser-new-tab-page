@@ -141,7 +141,7 @@ export default function News(props: NewsProps) {
       <div className="news-container">
         <span />
         <div className="news-content">
-          <Masonry columnsCount={2} gutter="20px">
+          <Masonry columnsCount={1} gutter="20px">
             {renderMasonryGridItem()}
           </Masonry>
         </div>

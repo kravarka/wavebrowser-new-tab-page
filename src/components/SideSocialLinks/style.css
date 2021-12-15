@@ -8,11 +8,11 @@
 }
 
 .sideSocialLinks > * {
-  margin-top: 30px;
+  margin-top: 16px;
   cursor: pointer;
 }
 
-.sideSocialLinks > img {
-  width: 26px;
-  height: 26px;
+.sideSocialLinks img {
+  width: 22px;
+  height: 22px;
 }

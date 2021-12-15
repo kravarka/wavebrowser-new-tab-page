@@ -24,10 +24,10 @@ export default function SiteInfo(props: SiteInfoProps) {
   return (
     <div className={getClassName('siteInfo', props)} style={props.style}>
       <div className="siteInfo-title">Lolita Mercedes</div>
-      <div className="siteInfo-container">
+      {/* <div className="siteInfo-container">
         <SiteInfoRow value="0" valueId="total-blocked-ads-10ce98f6-53f1-4d2c-b9de-4cda37d9e6cd" text=" ads blocked" valueFirst valueSize={30} textSize={20}/>
         <SiteInfoRow text={siteInfo.prefix} value={siteInfo.count} suffix={siteInfo.suffix} marginLeft={4} marginRight={4} valueSize={30} textSize={20}/>
-      </div>
+      </div> */}
     </div>
   )
 }

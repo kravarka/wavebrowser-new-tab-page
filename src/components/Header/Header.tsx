@@ -7,9 +7,10 @@ import './style.css'
 export default function Header() {
   return (
     <div className="header">
-      <SiteInfo />
-      <SearchBar />
-      <WeatherInfo />
+      {/* <div className="header-title"> */}
+        <SiteInfo />
+        <WeatherInfo />
+      {/* </div> */}
     </div>
   )
 }
