@@ -1,27 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './App.css';
-import MainPage from './components/MainPage/MainPage';
-import { getParameterByName, handleSearch } from './components/utils/utils';
+import WeatherInfo from './components/WeatherInfo/WeatherInfo';
 
 function App() {
-  const [searchQuery, setSearchQuery] = useState('');
-  useEffect(() => {
-    const onChange = () => {
-      setSearchQuery(getParameterByName('q') || '');
-    }
-    onChange();
-    window.addEventListener('hashchange', onChange);
-    return () => {
-      window.removeEventListener('hashchange', onChange);
-    }
-  }, []);
-
-  useEffect(()=>{
-    handleSearch(searchQuery);
-  }, [searchQuery]);
 
   return (
-    <MainPage/>
+    <WeatherInfo />
   );
 }
 
