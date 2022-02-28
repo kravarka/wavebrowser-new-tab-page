@@ -49,7 +49,8 @@ body, html {
   right: 0;
   /* z-index: -1; */
   display: block;
-  background-image: url('images/background.png');
+  /* background-image: url('images/background.png'); */
+  background-image: url('images/backgroundwave.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -138,7 +139,7 @@ body, html {
 .searchBar {
   width: var(--searchbar-width, 700px) !important;
   min-width: 300px;
-  height: 46px;
+  min-height: 46px;
   background: #3b3b3b;
   border-radius: 2px;
   display: flex;
@@ -147,7 +148,7 @@ body, html {
   align-items: center;
   padding-left: 16px;
   padding-right: 16px;
-  margin-top: var(--searchbar-top-offset, 95px);
+  /* margin-top: var(--searchbar-top-offset, 95px); */
   margin-left: 32px;
   margin-right: 32px;
 }
@@ -501,3 +502,18 @@ body, html {
   z-index: 1;
 }
 
+.wave-logo {
+  width: var(--searchbar-width, 700px) !important;
+  height: auto;
+  padding: 32px;
+}
+
+
+.middle-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 64px;
+  /* height: 100%; */
+}
