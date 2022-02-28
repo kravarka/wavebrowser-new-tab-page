@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  <script type="text/javascript">
+    window.addEventListener('message', (e) => {
+      const message = e.data;
+      if (message) {
+        document.querySelector('#news-iframe').style.height = `${message}px`;
+      }
+    })
+  </script>
+</head>
+
+<body>
+  <div class="mainPage">
+    <div class="header">
+      <div class='siteInfo'>
+        <div class="siteInfo-title">Lolita Mercedes</div>
+        <div class="siteInfo-container">
+          <p class='siteInfoRow-text ' style="font-size: 20px;">
+            <span id="total-blocked-ads-10ce98f6-53f1-4d2c-b9de-4cda37d9e6cd" class="siteInfoRow-value"
+              style="font-size: 30px;">
+              0
+            </span>
+            ads blocked
+          </p>
+          <p class='siteInfoRow-text ' style="font-size: 20px;">
+            Over
+            <span class="siteInfoRow-value" style="font-size: 30px;margin-left: 4px; margin-right: 4px; ">
+              1/2
+            </span>
+            trees saved
+          </p>
+        </div>
+      </div>
+
+      <div class='searchBar'>
+        <img class='icon' src="icons/Search icon.svg" />
+        <input class="searchBar-input" placeholder="Search or type a URL" />
+        <img class='icon' src="icons/Microphone logo.svg" />
+      </div>
+
+      <iframe class='weatherInfo' src="https://weather-info.d2ecqrxf4ipuv9.amplifyapp.com/">
+      </iframe>
+    </div>
+
+
+    <div class="mainBody">
+      <div class="mainBody-container" id="main">
+        <div class="sideMenu mainBody-sideMenu">
+          <div class="sideMenu-item sideMenu-item-selected">
+            <img class="icon home-icon" src="icons/Home icon.svg" />
+            <span class="sideMenu-item-name">Home</span>
+          </div>
+          <div class="sideMenu-item">
+            <img class="icon media-icon" src="icons/Media icon.svg" />
+            <span class="sideMenu-item-name">Media</span>
+          </div>
+          <div class="sideMenu-item">
+            <img class="icon links-icon" src="icons/Links icon.svg" />
+            <span class="sideMenu-item-name">Link</span>
+          </div>
+        </div>
+        <div class="sideSocialLinks mainBody-socialLinks">
+          <a href="https://facebook.com">
+            <img class='icon' src="icons/facebook.svg" />
+          </a>
+          <a href="https://twitter.com">
+            <img class='icon' src="icons/twitter.svg" />
+          </a>
+          <a href="https://youtube.com">
+            <img class='icon' src="icons/youtube.svg" />
+          </a>
+          <a href="https://instagram.com">
+            <img class='icon' src="icons/instagram.svg" />
+          </a>
+          <a href="https://linkedin.com">
+            <img class='icon' src="icons/linkedin.svg" />
+          </a>
+        </div>
+        <!-- TODO -->
+        <MostVisited />
+        <template is="dom-if" if="[[shortcutsEnabled_]]">
+          <ntp-most-visited id="mostVisited" dark$="[[theme_.isDark]]"
+            use-white-add-icon$="[[theme_.shortcutUseWhiteAddIcon]]" use-title-pill$="[[theme_.shortcutUseTitlePill]]">
+          </ntp-most-visited>
+        </template>
+      </div>
+    </div>
+
+    <div id="news" class="news">
+      <div class="scrollFor-arrow-down-container news-arrow-down-container" style="opacity: 1;">
+        <div>Scroll for Lolita News</div>
+        <img class="icon scrollFor-arrow-down" src="icons/Arrow down.svg" />
+      </div>
+      <div class="news-container">
+        <iframe src="https://news.defy4jd0x6pkx.amplifyapp.com/" id="news-iframe" width="100%" marginheight="0" frameborder="0" border="0"
+          scrolling="no"></iframe>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
